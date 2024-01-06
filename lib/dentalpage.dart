@@ -16,6 +16,14 @@ class _DentalPageState extends State<DentalPage> {
   bool gendermale = false;
   bool subgendermale = false;
   bool patGendermale = false;
+  bool orthdTreatN = false;
+  bool orthdTreatY = false;
+  bool replmntOfPrsY = false;
+  bool replmntOfPrsN = false;
+  bool treatResultOccupa = false;
+  bool treatResultAuto = false;
+  bool treatResultOther = false;
+
   bool patGenderfmale = false;
   bool subgenderfmale = false;
   bool patRelSelf = false;
@@ -44,10 +52,12 @@ class _DentalPageState extends State<DentalPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            //First Row of three cols
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                //col One
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,6 +96,8 @@ class _DentalPageState extends State<DentalPage> {
                   ],
                 ),
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     planeGrpCard(size, mainfontsize),
                     patRelationCard(size, mainfontsize),
@@ -125,6 +137,7 @@ class _DentalPageState extends State<DentalPage> {
               ],
             ),
             Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Card(
@@ -164,146 +177,722 @@ class _DentalPageState extends State<DentalPage> {
                         card(
                           size,
                           Text(
-                            "AUTHORIZATIONS",
-                            style: TextStyle(
-                                fontSize: mainfontsize * 1.2, color: blackclr),
-                          ),
-                        ),
-                        card(
-                          size,
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                height: size.height * 0.01,
-                              ),
-                              Text(
-                                "36) I have been informed of the treatment plan and associated fees. I agree to be responsible for all charges for dental services and materials not paid by my dental benefit plan, unless prohibited by law, or the treating dentist or dental patience has a contractual agreement with my plan prohibiting all or a portion of such charges. To the extent permitted by law, I consent to your use and disclosure of my protected health information to carry out payment activities in connection with this claim.",
-                                style: TextStyle(fontSize: mainfontsize * 0.9),
-                              ),
-                              SizedBox(
-                                height: size.height * 0.02,
-                              ),
-                              Text(
-                                "Patient/Guardian Signature",
-                                style: TextStyle(fontSize: mainfontsize * 0.9),
-                              ),
-                              SizedBox(
-                                height: size.height * 0.1,
-                                width: size.width * 0.3,
-                                child: TextFormField(
-                                  decoration: InputDecoration(
-                                      focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      errorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(color: greenClr),
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                      )),
-                                ),
-                              ),
-                              Text(
-                                "Date (MM/DD/CCYY)",
-                                style: TextStyle(fontSize: mainfontsize * 0.9),
-                              ),
-                              SizedBox(
-                                height: size.height * 0.1,
-                                width: size.width * 0.3,
-                                child: TextFormField(
-                                  decoration: InputDecoration(
-                                      focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      errorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(color: greenClr),
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                      )),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        card(
-                          size,
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "36) I hereby authorize and direct payment of the dental benefits otherwise payable to me, directly to the below named dentist or dental entity.",
-                                style: TextStyle(fontSize: mainfontsize * 0.9),
-                              ),
-                              SizedBox(
-                                height: size.height * 0.02,
-                              ),
-                              Text(
-                                "Subcriber Signature",
-                                style: TextStyle(fontSize: mainfontsize * 0.9),
-                              ),
-                              SizedBox(
-                                height: size.height * 0.1,
-                                width: size.width * 0.3,
-                                child: TextFormField(
-                                  decoration: InputDecoration(
-                                      focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      errorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(color: greenClr),
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                      )),
-                                ),
-                              ),
-                              Text(
-                                "Date (MM/DD/CCYY)",
-                                style: TextStyle(fontSize: mainfontsize * 0.9),
-                              ),
-                              SizedBox(
-                                height: size.height * 0.1,
-                                width: size.width * 0.3,
-                                child: TextFormField(
-                                  decoration: InputDecoration(
-                                      focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      errorBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(color: greenClr),
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                      )),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        card(
-                          size,
-                          Text(
                             "ANCILLARY CLAIM/TREATMENT INFORMATION ",
                             style: TextStyle(
                                 fontSize: mainfontsize * 1.2, color: blackclr),
                           ),
-                        )
+                        ),
+                        placeTreatmnt(size, mainfontsize),
+                        enclosureCard(size, mainfontsize),
+                        treatmntOrthoCard(size, mainfontsize),
+                        dateAppliPlaceCard(size, mainfontsize),
+                        monthOfTreatmntCard(size, mainfontsize),
+                        replaceOfProsCard(size, mainfontsize),
+                        dateOfPrioPlacCard(size, mainfontsize),
+                        treatResultfromCard(size, mainfontsize),
+                        dateOfAccidntCard(size, mainfontsize),
+                        autoAccidntStateCard(size, mainfontsize),
                       ],
                     ),
+                    Column(
+                      children: [
+                        //Billing Dentist or dental entity
+                        card(
+                          size,
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text(
+                                "BILLING DESTIST OR DENTAL ENTITY (Leave blank if dentist or dental entity is not submitting claim on behalf of the pateint or insured/subscriber.)",
+                                style: TextStyle(
+                                    fontSize: mainfontsize * 1.2,
+                                    color: blackclr),
+                              ),
+                              SizedBox(
+                                height: size.height * 0.02,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "48) Name",
+                                    style:
+                                        TextStyle(fontSize: mainfontsize * 0.9),
+                                  ),
+                                  SizedBox(
+                                    height: size.height * 0.1,
+                                    width: size.width * 0.3,
+                                    child: TextFormField(
+                                      decoration: InputDecoration(
+                                          focusedBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide:
+                                                BorderSide(color: greenClr),
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          )),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: size.height * 0.02,
+                                  ),
+                                  Text(
+                                    addressOnetxt,
+                                    style:
+                                        TextStyle(fontSize: mainfontsize * 0.9),
+                                  ),
+                                  SizedBox(
+                                    height: size.height * 0.1,
+                                    width: size.width * 0.3,
+                                    child: TextFormField(
+                                      decoration: InputDecoration(
+                                          focusedBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide:
+                                                BorderSide(color: greenClr),
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          )),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: size.height * 0.02,
+                                  ),
+                                  Text(
+                                    citytxt,
+                                    style:
+                                        TextStyle(fontSize: mainfontsize * 0.9),
+                                  ),
+                                  SizedBox(
+                                    height: size.height * 0.1,
+                                    width: size.width * 0.3,
+                                    child: TextFormField(
+                                      decoration: InputDecoration(
+                                          focusedBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide:
+                                                BorderSide(color: greenClr),
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          )),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: size.height * 0.02,
+                                  ),
+                                  Text(
+                                    "State",
+                                    style:
+                                        TextStyle(fontSize: mainfontsize * 0.9),
+                                  ),
+                                  SizedBox(
+                                    height: size.height * 0.1,
+                                    width: size.width * 0.3,
+                                    child: TextFormField(
+                                      decoration: InputDecoration(
+                                          focusedBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide:
+                                                BorderSide(color: greenClr),
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          )),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: size.height * 0.02,
+                                  ),
+                                  Text(
+                                    "Zip Code",
+                                    style:
+                                        TextStyle(fontSize: mainfontsize * 0.9),
+                                  ),
+                                  SizedBox(
+                                    height: size.height * 0.1,
+                                    width: size.width * 0.3,
+                                    child: TextFormField(
+                                      decoration: InputDecoration(
+                                          focusedBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          ),
+                                          errorBorder: OutlineInputBorder(
+                                            borderSide:
+                                                BorderSide(color: greenClr),
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          ),
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          )),
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                        card(
+                            size,
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "49) NPI",
+                                  style: TextStyle(
+                                      fontSize: mainfontsize * 1.2,
+                                      color: blackclr),
+                                ),
+                                SizedBox(
+                                  height: size.height * 0.1,
+                                  width: size.width * 0.3,
+                                  child: TextFormField(
+                                    decoration: InputDecoration(
+                                        focusedBorder: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: greenClr),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        )),
+                                  ),
+                                ),
+                              ],
+                            )),
+                        card(
+                            size,
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "50) License Number",
+                                  style: TextStyle(
+                                      fontSize: mainfontsize * 1.2,
+                                      color: blackclr),
+                                ),
+                                SizedBox(
+                                  height: size.height * 0.1,
+                                  width: size.width * 0.3,
+                                  child: TextFormField(
+                                    decoration: InputDecoration(
+                                        focusedBorder: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: greenClr),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        )),
+                                  ),
+                                ),
+                              ],
+                            )),
+                        card(
+                            size,
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "51) SSN or TIN",
+                                  style: TextStyle(
+                                      fontSize: mainfontsize * 1.2,
+                                      color: blackclr),
+                                ),
+                                SizedBox(
+                                  height: size.height * 0.1,
+                                  width: size.width * 0.3,
+                                  child: TextFormField(
+                                    decoration: InputDecoration(
+                                        focusedBorder: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: greenClr),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        )),
+                                  ),
+                                ),
+                              ],
+                            )),
+                        card(
+                            size,
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "52) Phone Number ",
+                                  style: TextStyle(
+                                      fontSize: mainfontsize * 1.2,
+                                      color: blackclr),
+                                ),
+                                SizedBox(
+                                  height: size.height * 0.1,
+                                  width: size.width * 0.3,
+                                  child: TextFormField(
+                                    decoration: InputDecoration(
+                                        focusedBorder: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: greenClr),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        )),
+                                  ),
+                                ),
+                              ],
+                            )),
+                        card(
+                            size,
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "53) Additional Provider ID",
+                                  style: TextStyle(
+                                      fontSize: mainfontsize * 1.2,
+                                      color: blackclr),
+                                ),
+                                SizedBox(
+                                  height: size.height * 0.1,
+                                  width: size.width * 0.3,
+                                  child: TextFormField(
+                                    decoration: InputDecoration(
+                                        focusedBorder: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: greenClr),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        )),
+                                  ),
+                                ),
+                              ],
+                            )),
+                      ],
+                    )
                   ],
                 ),
+                Card(
+                  elevation: 2,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16)),
+                  child: Container(
+                    width: size.width,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color: Colors.green[50],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Center(
+                        child: Text(
+                          "TREATING DENTIST AND TREATMENT LOCATION INFORMATION ",
+                          style: TextStyle(
+                              fontSize: mainfontsize * 1.2, color: blackclr),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    card(
+                      size,
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "53) I hereby certify that the procedures as indicated by date are in progress (for procedures that require multiple visits) or have been completed",
+                            style: TextStyle(fontSize: mainfontsize * 0.9),
+                          ),
+                          SizedBox(
+                            height: size.height * 0.02,
+                          ),
+                          Text(
+                            "Signed (Treating Dentist)",
+                            style: TextStyle(fontSize: mainfontsize * 0.9),
+                          ),
+                          SizedBox(
+                            height: size.height * 0.1,
+                            width: size.width * 0.3,
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: greenClr),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  )),
+                            ),
+                          ),
+                          Text(
+                            "Date (MM/DD/CCYY)",
+                            style: TextStyle(fontSize: mainfontsize * 0.9),
+                          ),
+                          SizedBox(
+                            height: size.height * 0.1,
+                            width: size.width * 0.3,
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: greenClr),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  )),
+                            ),
+                          ),
+                          Text(
+                            "54) NPI",
+                            style: TextStyle(
+                                fontSize: mainfontsize * 0.9, color: blackclr),
+                          ),
+                          SizedBox(
+                            height: size.height * 0.1,
+                            width: size.width * 0.3,
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: greenClr),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  )),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    card(
+                      size,
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "55) License Number",
+                            style: TextStyle(
+                                fontSize: mainfontsize * 1.2, color: blackclr),
+                          ),
+                          SizedBox(
+                            height: size.height * 0.1,
+                            width: size.width * 0.3,
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: greenClr),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  )),
+                            ),
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                height: size.height * 0.02,
+                              ),
+                              Text(
+                                "56) $addressOnetxt",
+                                style: TextStyle(fontSize: mainfontsize * 0.9),
+                              ),
+                              SizedBox(
+                                height: size.height * 0.1,
+                                width: size.width * 0.3,
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                      focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(color: greenClr),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      )),
+                                ),
+                              ),
+                              SizedBox(
+                                height: size.height * 0.02,
+                              ),
+                              Text(
+                                citytxt,
+                                style: TextStyle(fontSize: mainfontsize * 0.9),
+                              ),
+                              SizedBox(
+                                height: size.height * 0.1,
+                                width: size.width * 0.3,
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                      focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(color: greenClr),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      )),
+                                ),
+                              ),
+                              SizedBox(
+                                height: size.height * 0.02,
+                              ),
+                              Text(
+                                "State",
+                                style: TextStyle(fontSize: mainfontsize * 0.9),
+                              ),
+                              SizedBox(
+                                height: size.height * 0.1,
+                                width: size.width * 0.3,
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                      focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(color: greenClr),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      )),
+                                ),
+                              ),
+                              SizedBox(
+                                height: size.height * 0.02,
+                              ),
+                              Text(
+                                "Zip Code",
+                                style: TextStyle(fontSize: mainfontsize * 0.9),
+                              ),
+                              SizedBox(
+                                height: size.height * 0.1,
+                                width: size.width * 0.3,
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                      focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(color: greenClr),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      )),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        card(
+                            size,
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "56a) Provider Specialty Code",
+                                  style: TextStyle(
+                                      fontSize: mainfontsize * 1.2,
+                                      color: blackclr),
+                                ),
+                                SizedBox(
+                                  height: size.height * 0.1,
+                                  width: size.width * 0.3,
+                                  child: TextFormField(
+                                    decoration: InputDecoration(
+                                        focusedBorder: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: greenClr),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        )),
+                                  ),
+                                ),
+                              ],
+                            )),
+                        card(
+                            size,
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "57) Phone Number",
+                                  style: TextStyle(
+                                      fontSize: mainfontsize * 1.2,
+                                      color: blackclr),
+                                ),
+                                SizedBox(
+                                  height: size.height * 0.1,
+                                  width: size.width * 0.3,
+                                  child: TextFormField(
+                                    decoration: InputDecoration(
+                                        focusedBorder: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: greenClr),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        )),
+                                  ),
+                                ),
+                              ],
+                            )),
+                        card(
+                            size,
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "58) Additional Provider ID",
+                                  style: TextStyle(
+                                      fontSize: mainfontsize * 1.2,
+                                      color: blackclr),
+                                ),
+                                SizedBox(
+                                  height: size.height * 0.1,
+                                  width: size.width * 0.3,
+                                  child: TextFormField(
+                                    decoration: InputDecoration(
+                                        focusedBorder: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: greenClr),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        )),
+                                  ),
+                                ),
+                              ],
+                            ))
+                      ],
+                    )
+                  ],
+                )
               ],
             ),
           ],
@@ -2346,13 +2935,11 @@ class _DentalPageState extends State<DentalPage> {
   }
 
   Widget teethxCard(Size size, double mainfontsize) {
-    // List<bool> isSelected = List.generate(32, (index) => false);
-
     return Card(
       elevation: 2,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: Container(
-        width: size.width * 0.85,
+        width: size.width,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           color: Colors.green[50],
@@ -2364,7 +2951,7 @@ class _DentalPageState extends State<DentalPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                width: size.width * 0.08,
+                width: size.width,
                 child: Text(
                   "33) Missing Teeth Information (Place an 'X' on Each Missing tooth.)",
                   style: TextStyle(fontSize: mainfontsize * 0.9),
@@ -2550,6 +3137,132 @@ class _DentalPageState extends State<DentalPage> {
           ),
         ),
         reMarkCard(size, mainfontsize),
+        card(
+          size,
+          Text(
+            "AUTHORIZATIONS",
+            style: TextStyle(fontSize: mainfontsize * 1.2, color: blackclr),
+          ),
+        ),
+        card(
+          size,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: size.height * 0.01,
+              ),
+              Text(
+                "36) I have been informed of the treatment plan and associated fees. I agree to be responsible for all charges for dental services and materials not paid by my dental benefit plan, unless prohibited by law, or the treating dentist or dental patience has a contractual agreement with my plan prohibiting all or a portion of such charges. To the extent permitted by law, I consent to your use and disclosure of my protected health information to carry out payment activities in connection with this claim.",
+                style: TextStyle(fontSize: mainfontsize * 0.9),
+              ),
+              SizedBox(
+                height: size.height * 0.02,
+              ),
+              Text(
+                "Patient/Guardian Signature",
+                style: TextStyle(fontSize: mainfontsize * 0.9),
+              ),
+              SizedBox(
+                height: size.height * 0.1,
+                width: size.width * 0.3,
+                child: TextFormField(
+                  decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: greenClr),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      )),
+                ),
+              ),
+              Text(
+                "Date (MM/DD/CCYY)",
+                style: TextStyle(fontSize: mainfontsize * 0.9),
+              ),
+              SizedBox(
+                height: size.height * 0.1,
+                width: size.width * 0.3,
+                child: TextFormField(
+                  decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: greenClr),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      )),
+                ),
+              ),
+            ],
+          ),
+        ),
+        card(
+          size,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "37) I hereby authorize and direct payment of the dental benefits otherwise payable to me, directly to the below named dentist or dental entity.",
+                style: TextStyle(fontSize: mainfontsize * 0.9),
+              ),
+              SizedBox(
+                height: size.height * 0.02,
+              ),
+              Text(
+                "Subcriber Signature",
+                style: TextStyle(fontSize: mainfontsize * 0.9),
+              ),
+              SizedBox(
+                height: size.height * 0.1,
+                width: size.width * 0.3,
+                child: TextFormField(
+                  decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: greenClr),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      )),
+                ),
+              ),
+              Text(
+                "Date (MM/DD/CCYY)",
+                style: TextStyle(fontSize: mainfontsize * 0.9),
+              ),
+              SizedBox(
+                height: size.height * 0.1,
+                width: size.width * 0.3,
+                child: TextFormField(
+                  decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: greenClr),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      )),
+                ),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }
@@ -2563,6 +3276,404 @@ class _DentalPageState extends State<DentalPage> {
         children: [
           Text(
             "35) Remarks ",
+            style: TextStyle(fontSize: mainfontsize * 0.9),
+          ),
+          SizedBox(
+            height: size.height * 0.1,
+            width: size.width * 0.3,
+            child: TextFormField(
+              decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: greenClr),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  )),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget placeTreatmnt(Size size, double mainfontsize) {
+    return card(
+      size,
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "38) Place of Treatment (e.g. 11= office; 22=O/P Hospital) ",
+            style: TextStyle(fontSize: mainfontsize * 0.9),
+          ),
+          Text(
+            "(Use 'Place of Service code for Proffessional Claimns')",
+            style: TextStyle(fontSize: mainfontsize * 0.9),
+          ),
+          SizedBox(
+            height: size.height * 0.1,
+            width: size.width * 0.3,
+            child: TextFormField(
+              decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: greenClr),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  )),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget enclosureCard(Size size, double mainfontsize) {
+    return card(
+      size,
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "39) Enclosures (Y or N)",
+            style: TextStyle(fontSize: mainfontsize * 0.9),
+          ),
+          SizedBox(
+            height: size.height * 0.1,
+            width: size.width * 0.3,
+            child: TextFormField(
+              decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: greenClr),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  )),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget treatmntOrthoCard(Size size, double mainfontsize) {
+    return card(
+      size,
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "40) Is Treatment for Orthodontics?",
+            style: TextStyle(fontSize: mainfontsize * 0.9),
+          ),
+          Row(
+            children: [
+              Checkbox(
+                  value: orthdTreatN,
+                  onChanged: (value) {
+                    setState(() {
+                      orthdTreatN = true;
+                      orthdTreatY = false;
+                    });
+                  }),
+              Text(
+                "No (Skip 41-42)",
+                style: TextStyle(fontSize: mainfontsize * 0.9),
+              )
+            ],
+          ),
+          Row(
+            children: [
+              Checkbox(
+                  value: orthdTreatY,
+                  onChanged: (value) {
+                    setState(() {
+                      orthdTreatY = true;
+                      orthdTreatN = false;
+                    });
+                  }),
+              Text(
+                "Yes (Complete 41-42)",
+                style: TextStyle(fontSize: mainfontsize * 0.9),
+              )
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget dateAppliPlaceCard(Size size, double mainfontsize) {
+    return card(
+      size,
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "41) Date Appliance Placed (MM/DD/CCYY)",
+            style: TextStyle(fontSize: mainfontsize * 0.9),
+          ),
+          SizedBox(
+            height: size.height * 0.1,
+            width: size.width * 0.3,
+            child: TextFormField(
+              decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: greenClr),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  )),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget monthOfTreatmntCard(Size size, double mainfontsize) {
+    return card(
+      size,
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "42) Month of Treatment Remaining",
+            style: TextStyle(fontSize: mainfontsize * 0.9),
+          ),
+          SizedBox(
+            height: size.height * 0.1,
+            width: size.width * 0.3,
+            child: TextFormField(
+              decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: greenClr),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  )),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget replaceOfProsCard(Size size, double mainfontsize) {
+    return card(
+      size,
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "43) Replacement of Prosthesis",
+            style: TextStyle(fontSize: mainfontsize * 0.9),
+          ),
+          Row(
+            children: [
+              Checkbox(
+                  value: replmntOfPrsN,
+                  onChanged: (value) {
+                    setState(() {
+                      replmntOfPrsN = true;
+                      replmntOfPrsY = false;
+                    });
+                  }),
+              Text(
+                "No",
+                style: TextStyle(fontSize: mainfontsize * 0.9),
+              )
+            ],
+          ),
+          Row(
+            children: [
+              Checkbox(
+                  value: replmntOfPrsY,
+                  onChanged: (value) {
+                    setState(() {
+                      replmntOfPrsY = true;
+                      replmntOfPrsN = false;
+                    });
+                  }),
+              Text(
+                "Yes (Complete 44)",
+                style: TextStyle(fontSize: mainfontsize * 0.9),
+              )
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget dateOfPrioPlacCard(Size size, double mainfontsize) {
+    return card(
+      size,
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "44) Date of Prior Placement (MM/DD/CCYY)",
+            style: TextStyle(fontSize: mainfontsize * 0.9),
+          ),
+          SizedBox(
+            height: size.height * 0.1,
+            width: size.width * 0.3,
+            child: TextFormField(
+              decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: greenClr),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  )),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget treatResultfromCard(Size size, double mainfontsize) {
+    return card(
+      size,
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "45) Treatment Resulting from",
+            style: TextStyle(fontSize: mainfontsize * 0.9),
+          ),
+          Row(
+            children: [
+              Checkbox(
+                  value: treatResultOccupa,
+                  onChanged: (value) {
+                    setState(() {
+                      treatResultOccupa = true;
+                      treatResultOther = false;
+                      treatResultAuto = false;
+                    });
+                  }),
+              Text(
+                "Occupational illness/injury",
+                style: TextStyle(fontSize: mainfontsize * 0.9),
+              )
+            ],
+          ),
+          Row(
+            children: [
+              Checkbox(
+                  value: treatResultAuto,
+                  onChanged: (value) {
+                    setState(() {
+                      treatResultAuto = true;
+                      treatResultOccupa = false;
+                      treatResultOther = false;
+                    });
+                  }),
+              Text(
+                "Auto accident ",
+                style: TextStyle(fontSize: mainfontsize * 0.9),
+              )
+            ],
+          ),
+          Row(
+            children: [
+              Checkbox(
+                  value: treatResultOther,
+                  onChanged: (value) {
+                    setState(() {
+                      treatResultOther = true;
+                      treatResultOccupa = false;
+                      treatResultAuto = false;
+                    });
+                  }),
+              Text(
+                "Other accident",
+                style: TextStyle(fontSize: mainfontsize * 0.9),
+              )
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget dateOfAccidntCard(Size size, double mainfontsize) {
+    return card(
+      size,
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "46) Date of Accident (MM/DD/CCYY)",
+            style: TextStyle(fontSize: mainfontsize * 0.9),
+          ),
+          SizedBox(
+            height: size.height * 0.1,
+            width: size.width * 0.3,
+            child: TextFormField(
+              decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: greenClr),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  )),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget autoAccidntStateCard(Size size, double mainfontsize) {
+    return card(
+      size,
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "47) Auto Accident State ",
             style: TextStyle(fontSize: mainfontsize * 0.9),
           ),
           SizedBox(
